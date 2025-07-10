@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulaire</title>
+</head>
+<body>
+    <h2>Inscription</h2>
+
+    <!-- Formulaire qui envoie vers /submit avec la méthode POST -->
+    <form method="POST" action="/submit">
+
+        <!-- Champ pour le nom -->
+        <label>Nom :</label><br>
+        <input type="text" name="name" required><br><br>
+
+        <!-- Champ pour l'email -->
+        <label>Email :</label><br>
+        <input type="email" name="email" required><br><br>
+
+        <!-- Champ pour le mot de passe -->
+        <label>Mot de passe :</label><br>
+        <input type="password" name="password" required><br><br>
+
+        <!-- Bouton pour envoyer -->
+        <button type="submit">Envoyer</button>
+    </form>
+</body>
+</html>

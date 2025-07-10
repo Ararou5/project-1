@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head><title>Tableau de bord</title></head>
+<body>
+    <h2>Bienvenue {{ user.name }}</h2>
+    <p>Email : {{ user.email }}</p>
+
+    <h3>Documents :</h3>
+    {% if user.documents %}
+        <ul>
+            {% for doc in user.documents %}
+                {% if doc.type == 'text' %}
+                    <li>📝 {{ doc.title }}</li>
+                {% elif doc.type == 'file' %}
+                   <li>📎 <a href="{{ url_for('uploaded_file', filename=doc.filename) }}">
+                    {{ doc.filename }}</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Aucun document trouvé.</p>
+    {% endif %}
+
+    <a href="/add-document">Ajouter un document</a><br>
+    <a href="/logout">Se déconnecter</a>
+</body>
+</html>
